@@ -53,5 +53,11 @@ class HTTPSClientAuthHandler(urllib2.HTTPSHandler):
         # will behave as a constructor
         return self.do_open(self.getConnection, req)
     
-    def getConnection(self, host):
-        return httplib.HTTPSConnection(host, key_file=self.key, cert_file=self.cert)
+    def getConnection(self, host, timeout=None):
+        try:
+            connection = httplib.HTTPSConnection(host, timeout=timeout, key_file=self.key, cert_file=self.cert)
+        except:
+            # Python versions pre-2.6
+            connection = httplib.HTTPSConnection(host, key_file=self.key, cert_file=self.cert)            
+        return connection
+    
