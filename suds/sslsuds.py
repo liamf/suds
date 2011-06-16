@@ -1,6 +1,8 @@
 # Wrapper for SUDS to provide HTTPS client authentication for the SUDS SOAP library
 # Modified from http://www.threepillarglobal.com/soap_client_auth
 #
+# Added support for Python 2.6 (Liam Friel, 2011)
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the (LGPL) GNU Lesser General Public License as
 # published by the Free Software Foundation; either version 3 of the 
